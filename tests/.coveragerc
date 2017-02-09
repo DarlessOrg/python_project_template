@@ -2,7 +2,7 @@
 [report]
 omit =
   # Omit the main file used with argparse
-  differ/main.py
+  python_project_template/main.py
 
   # Omit the tests themselves
   tests/*

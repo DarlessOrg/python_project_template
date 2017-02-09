@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/Darless/python_project_template.svg?branch=master)](https://travis-ci.org/Darless/python_project_template)
+[![Coverage Status](https://coveralls.io/repos/github/Darless/python_project_template/badge.svg)](https://coveralls.io/github/Darless/python_project_template)
+[![Docker Automated buil](https://img.shields.io/docker/automated/Darless/python_project_template.svg)](https://hub.docker.com/r/Darless/python_project_template/)
+
 TL;DR
 =====
 

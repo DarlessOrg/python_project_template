@@ -5,16 +5,17 @@ import datetime
 import logging
 logger = logging.getLogger("app.project")
 
-BUILD_DIR = "build"
-
 class Project(object):
-  def __init__(self):
+  def __init__(self, test=False):
     self.package = None
     self.title = None
     self.description = None
     self.authors = []
     self.copyright = None
     self.version = "1.0"
+    self.build_dir = "build"
+    if test:
+      self.build_dir = ".test_build"
 
     # Private
     self.path = None
@@ -149,10 +150,10 @@ class Project(object):
 
   def _setup_dir(self):
     """Create the directory for the project"""
-    if not os.path.exists(BUILD_DIR):
-      os.mkdir(BUILD_DIR)
+    if not os.path.exists(self.build_dir):
+      os.mkdir(self.build_dir)
 
-    self.path = "build/{}".format(self.package)
+    self.path = "{}/{}".format(self.build_dir, self.package)
     if os.path.exists(self.path):
       logger.error("{} already exists. Please remove it first".format(
         self.path))
@@ -198,7 +199,7 @@ class Project(object):
     with open(template_path, 'r') as fp:
       content = fp.read()
     if not content:
-      logger.error("Template {} has no content".format(f_name))
+      logger.error("Template {} has no content".format(template_path))
       return False
     with open(dest_path, 'w') as fp:
       fp.write(content.format(**self.template_data()))
