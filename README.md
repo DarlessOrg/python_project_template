@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/Darless/python_project_template.svg?branch=master)](https://travis-ci.org/Darless/python_project_template)
-[![Coverage Status](https://coveralls.io/repos/github/Darless/python_project_template/badge.svg)](https://coveralls.io/github/Darless/python_project_template)
+[![Coverage Status](https://coveralls.io/repos/github/Darless/python_project_template/badge.svg?branch=master)](https://coveralls.io/github/Darless/python_project_template?branch=master)
 [![Docker Automated build](https://img.shields.io/docker/automated/madrussian/python_project_template.svg)](https://hub.docker.com/r/madrussian/python_project_template/)
 
 TL;DR
