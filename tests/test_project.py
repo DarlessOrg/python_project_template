@@ -134,6 +134,7 @@ def test_project_copyright():
 
 def test_project_wizard():
   """Test project wizard support"""
+  python_project_template.utils.setup_logging()
   proj = python_project_template.project.Project(test=True)
   _raw_input_set([
     # Title
@@ -164,3 +165,7 @@ def test_project_wizard():
   with open("/tmp/.python_template_empty.txt", "w"):
     pass
   assert not proj.write_template("/tmp/.python_template_empty.txt", "/dev/null")
+
+  # Attempt to process a template directory
+  proj.template_dir = "tests/test_templates"
+  assert not proj.process_template_dir("test_dir")
